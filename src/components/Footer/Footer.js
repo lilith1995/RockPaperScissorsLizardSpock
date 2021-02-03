@@ -1,38 +1,39 @@
-import React, { useState } from "react";
-import Modal from "./Modal";
-import imageRules from '../images/image-rules.svg';
-import closeIcon from "../images/x.svg"
+import React, { Component } from "react";
 
-function Footer() {
+import Button from "../../components/Button/Button";
+import Modal from "../../components/Modal/Modal";
 
-    const [showModal, setShowModal] = useState(false);
+import "./Footer.scss";
 
-    function toggleModal() {
-        setShowModal(!showModal);
-    }
+class Footer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+    };
 
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
+  render() {
     return (
-        <div>
-            <footer>
-                <button onClick={toggleModal}>Rules</button>
-                <p className="footer__message">Made with &hearts; inspired by Sheldon Cooper</p>
-            </footer>
-            { showModal? (
-                <Modal>
-                    <div className="modal__header">
-                        <h1>Rules</h1>
-                        <button className="desktop__button" onClick={toggleModal}>
-                            <img src={closeIcon} alt="Close Icon" />
-                        </button>
-                    </div>
-                    <img src={imageRules} alt="Game Rules" />
-                    <button className="mobile__button" onClick={toggleModal}>
-                            <img src={closeIcon} alt="Close Icon" />
-                    </button>
-                </Modal>
-            ) : null }
-        </div>
-    )
+      <footer>
+        <p>Made with ♥ inspired by Sheldon Cooper</p>
+        <Button className="footer-button" onClick={this.handleOpenModal}>
+          Game Rules
+        </Button>
+        <Modal showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
+      </footer>
+    );
+  }
 }
 
 export default Footer;
