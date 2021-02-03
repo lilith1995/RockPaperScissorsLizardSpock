@@ -47,29 +47,3 @@
     }
   }
   
-  @media screen and (max-width: 400px) {
-    .modal-wrapper {
-      .modal-inner {
-        height: 100vh;
-        width: 100%;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-  
-        .modal__header {
-          justify-content: center;
-        }
-      }
-    }
-  
-    button {
-      &.mobile__button {
-        display: inline-block;
-      }
-  
-      &.desktop__button {
-        display: none;
-      }
-    }
-  }

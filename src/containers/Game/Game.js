@@ -1,5 +1,6 @@
 import React from "react";
 
+import Header from "../../components/Header/Header";
 import ScoreBar from "../../components/ScoreBar/ScoreBar";
 import GameOption from "../../components/GameOption/GameOption";
 import GameResult from "../../utils/GameResult";
@@ -89,13 +90,13 @@ class Game extends React.Component {
     if (this.state.timer === 3 && this.state.userSelection) {
       this.intervalId = setInterval(() => {
         if (this.state.timer === 1) {
-            let usScore = this.state.userScore;
-            let compScore =this.state.computerScore;
+          let usScore = this.state.userScore;
+          let compScore = this.state.computerScore;
           if (this.state.winnerText === "YOU WON)))") {
             usScore += 1;
           } else if (this.state.winnerText === "YOU LOST(((") {
             compScore += 1;
-            }
+          }
           clearInterval(this.intervalId);
           this.setState({
             isTimerOn: false,
@@ -126,7 +127,10 @@ class Game extends React.Component {
 
     return (
       <div className="app-game">
-        <ScoreBar userScore={userScore} computerScore={computerScore} />
+        <div className="scorebox">
+        <Header />
+          <ScoreBar userScore={userScore} computerScore={computerScore} />
+        </div>
         {!userSelection ? (
           <div className="app-game__content">
             <GameOption
