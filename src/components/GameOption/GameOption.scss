@@ -6,7 +6,7 @@
     align-items: center;
     border-radius: 50%;
     border: 12px solid;
-    border-color: burlywood;
+    border-color: #374169;
     margin: 15px;
 
     &:hover {
@@ -16,5 +16,6 @@
 
     &__icon-container {
         border-radius: 50%;
+        
     }
 }

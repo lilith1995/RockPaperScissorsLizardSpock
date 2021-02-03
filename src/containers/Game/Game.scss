@@ -3,32 +3,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &__scorebox {
+        border: 3px solid rgb(0, 0, 0);
+        background: radial-gradient(circle, #2d435f 0%, #3e3f70 100%);
+        border-radius: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        max-width: 700px;
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }     
 }
 
-.scorebox {
-    border: 3px solid rgb(0, 0, 0);
-    background: radial-gradient(circle, #2d435f 0%, #3e3f70 100%);
-    border-radius: 0.4rem;
+.game-content{
     display: flex;
-    justify-content: space-between;
-    max-width: 700px;
-    width: 100%;
-    padding: 20px;
-    margin-top: 20px;
-    box-sizing: border-box;
+    flex-direction: row; 
+    &choice.rock{
+        padding-top: 900px;
+    }
 }
 
-.button {
-    background: none;
-    border: none;
-    align-self: center;
-    color: black;
+button {
+    background-color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.8em;
+    transition: 0.2s;
 
     &:hover {
-        cursor: pointer;
+        background-color: rgb(255, 0, 0);
+        color: whitesmoke;
     }
-
-    &.mobile__button {
-        display: none;
-    }
+}
+.winnertext{
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin: 20px 0;
+    color: white;
+    font-weight: 500;
+    text-align: justify;
 }

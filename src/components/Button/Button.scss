@@ -10,7 +10,9 @@
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 2px;
-    
+    display: flex;
+    margin-right: 10px;
+
     &:hover {
       background-color: rgba(234, 233, 247, 0.8);
       color: #787e97;

@@ -24,23 +24,23 @@ const choice = {
 const optionsMap = {
   rock: {
     icon: RockIcon,
-    color: "white",
+    color: "#128FA9",
   },
   paper: {
     icon: PaperIcon,
-    color: "white",
+    color: "#FFFFFF",
   },
   scissors: {
     icon: ScissorsIcon,
-    color: "white",
+    color: "#F2445D",
   },
   lizard: {
     icon: LizardIcon,
-    color: "white",
+    color: "#F9C255",
   },
   spock: {
     icon: SpockIcon,
-    color: "white",
+    color: "#A25726",
   },
 };
 
@@ -127,12 +127,12 @@ class Game extends React.Component {
 
     return (
       <div className="app-game">
-        <div className="scorebox">
-        <Header />
+        <div className="app-game__scorebox">
+          <Header />
           <ScoreBar userScore={userScore} computerScore={computerScore} />
         </div>
         {!userSelection ? (
-          <div className="app-game__content">
+          <div className="game-content">
             <GameOption
               Icon={optionsMap[choice.rock].icon}
               color={optionsMap[choice.rock].color}
@@ -181,7 +181,7 @@ class Game extends React.Component {
             ) : (
               <div>
                 <button onClick={this.restart}>Wanna play again?</button>
-                <span>{winnerText}</span>
+                <div className="winnertext">{winnerText}</div>
                 <GameOption
                   Icon={optionsMap[randomSelection].icon}
                   color={optionsMap[randomSelection].color}
