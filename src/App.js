@@ -1,11 +1,14 @@
 import React from "react";
 
+import Layout from "./components/Layout/Layout";
 import Game from "./containers/Game/Game";
 
 function App() {
   return (
-    <div className="game-app">
-      <Game />
+    <div className="App">
+      <Layout>
+        <Game />
+      </Layout>
     </div>
   );
 }

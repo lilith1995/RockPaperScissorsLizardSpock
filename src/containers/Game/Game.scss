@@ -1,0 +1,21 @@
+.app-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background: none;
+    border: none;
+    align-self: center;
+    color: black;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.mobile__button {
+        display: none;
+    }
+}
