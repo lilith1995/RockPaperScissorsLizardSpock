@@ -94,7 +94,7 @@ class Game extends React.Component {
           if (this.state.winnerText === "YOU WON)))") {
             usScore += 1;
           } else if (this.state.winnerText === "YOU LOST(((") {
-            compScore -= 1;
+            compScore += 1;
             }
           clearInterval(this.intervalId);
           this.setState({

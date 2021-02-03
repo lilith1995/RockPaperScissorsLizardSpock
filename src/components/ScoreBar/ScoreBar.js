@@ -6,7 +6,7 @@ function ScoreBar({ userScore, computerScore }) {
   return (
     <div className="scorebar">
       <div className="scorebar__title">Score</div>
-          {userScore}
+          {userScore}<br></br>
           {computerScore}
     </div>
   );
